@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+#
+
+Pact.create!(
+  slug: 'test-pact',
+  name: 'Ian',
+  action: 'sweep the pavement of Station Road',
+  people_requirement: '10 people'
+)
