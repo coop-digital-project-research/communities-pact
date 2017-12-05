@@ -18,3 +18,22 @@
 button {
   margin-bottom: 1rem;
 }
+
+[contenteditable=true] {
+  padding: 4px;
+  margin: 2px;
+  background-color: #66CDAA;
+}
+
+[contenteditable=true]:empty {
+  background-color: #CCC;
+  color: white;
+}
+
+[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+}
+
+blockquote {
+  font-size: 200%;
+}
