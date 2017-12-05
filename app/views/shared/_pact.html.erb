@@ -1,3 +1,11 @@
 <blockquote class="pact-statement">
-  I, <%= pact_member.name %>, will <%= pact.action %> and I need <%= pluralize(pact.people_requirement, 'people')%>  to join.
+  I, <%= pact_member.name %>, will <%= pact.action %>
+  <% if pact.member_difference > 0 %>
+    <% if pact.member_count == 1 %>
+      and I need <%= pluralize(pact.people_requirement, 'people')%>  to join.
+    <% else %>
+      with <%= pact.member_names(without: pact_member)%>
+      and we need <%= pluralize(pact.member_difference, 'people')%> to join us.
+    <% end %>
+  <% end %>
 </blockquote>
