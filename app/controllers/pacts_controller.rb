@@ -11,7 +11,7 @@ class PactsController < ApplicationController
 
     if @pact_form.valid?
       pact_member = PactCreator.create!(@pact_form)
-      redirect_to pact_path(pact_member.public_slug)
+      redirect_to member_path(pact_member.member_slug)
     else
       render :new
     end
