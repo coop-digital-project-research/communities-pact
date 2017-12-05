@@ -1,6 +1,34 @@
+<h1 class="header-poster">Join the pack!</h1>
+
 <% if @pact_member.creator? %>
   <h1>You created a pact!</h1>
 <% else %>
   <h1>You joined a pact!</h1>
 <% end %>
 <%= render 'shared/pact', pact_member: @pact_member, pact: @pact %>
+
+<section class="share-pact">
+  <h2>Share your pact</h2>
+  <div>
+    <button onClick="window.print()" class="btn btn-primary">View print-ready poster</button>
+  </div>
+
+  <!-- Load Facebook SDK for JavaScript -->
+  <div id="fb-root"></div>
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.11';
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+
+  <div class="share-buttons">
+    <!-- Your share button code -->
+    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+
+    <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
+  </div>
+</section>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
