@@ -13,3 +13,13 @@
 //= require jquery
 //= require rails-ujs
 //= require_tree .
+
+$(document).ready(function(){
+  $('[contenteditable=true]:first').focus();
+  $('[contenteditable=true]').keyup(function(){
+    var element = $(this);
+    if(element.data('update').length > 1){
+      $(element.data('update')).val(element.html());
+    }
+  });
+});

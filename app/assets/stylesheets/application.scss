@@ -13,4 +13,23 @@
  *= require_self
  */
 
-@import 'coop-toolkit/coop-toolkit'
+@import 'coop-toolkit/coop-toolkit';
+
+[contenteditable=true] {
+  padding: 4px;
+  margin: 2px;
+  background-color: #66CDAA;
+}
+
+[contenteditable=true]:empty {
+  background-color: #CCC;
+  color: white;
+}
+
+[contenteditable=true]:empty:before {
+  content: attr(placeholder);
+}
+
+blockquote {
+  font-size: 200%;
+}
