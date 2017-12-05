@@ -19,7 +19,19 @@ button {
   margin-bottom: 1rem;
 }
 
+h1 {
+  &.header-poster {
+    display: none;
+  }
+}
+
 @media print {
+  h1 {
+    display: none;
+    &.header-poster {
+      display: block;
+    }
+  }
   section.share-pact {
     display: none;
   }
