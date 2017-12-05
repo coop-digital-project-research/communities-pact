@@ -1,0 +1,11 @@
+<%= form_for @pact_form, as: :pact, url: pacts_path do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :action %>
+  <%= f.text_field :action %>
+  <%= f.label :people_requirement %>
+  <%= f.text_field :people_requirement %>
+  <%= f.submit %>
+<% end %>

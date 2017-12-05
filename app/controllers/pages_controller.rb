@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
 
   def index
-    @pacts = Pact.all
+    @pact_members = PactMember.all
   end
 
   def show

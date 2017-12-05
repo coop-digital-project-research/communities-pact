@@ -1,0 +1,6 @@
+<% if @pact_member.creator? %>
+  <h1>You created a pact!</h1>
+<% else %>
+  <h1>You joined a pact!</h1>
+<% end %>
+<%= render 'shared/pact', pact_member: @pact_member, pact: @pact %>

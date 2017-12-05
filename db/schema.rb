@@ -10,13 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171204123956) do
+ActiveRecord::Schema.define(version: 20171205144417) do
+
+  create_table "pact_members", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "email", null: false
+    t.integer "pact_id", null: false
+    t.string "member_slug", null: false
+    t.string "public_slug", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "creator", default: false
+  end
 
   create_table "pacts", force: :cascade do |t|
-    t.string "slug"
-    t.text "name", null: false
     t.text "action", null: false
-    t.text "people_requirement", null: false
+    t.integer "people_requirement", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

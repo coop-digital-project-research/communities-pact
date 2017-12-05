@@ -6,3 +6,12 @@
   <% end %>
 </ol>
 
+<ul>
+  <%- @pact_members.each do |pact_member| %>
+    <li>
+      <%= pact_member.name %> has <%= pact_member.creator? ? 'created' : 'joined' %> a pact
+      <%= link_to '[View pact page]', pact_path(pact_member.public_slug)%>
+      <%= link_to '[View post-creation page]', member_path(pact_member.member_slug)%>
+    </li>
+  <% end %>
+</ul>
