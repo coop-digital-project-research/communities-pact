@@ -1,6 +1,20 @@
+<h1 class="header-poster">Join the pack!</h1>
+
 <% if @pact_member.creator? %>
   <h1>You created a pact!</h1>
 <% else %>
   <h1>You joined a pact!</h1>
 <% end %>
 <%= render 'shared/pact', pact_member: @pact_member, pact: @pact %>
+
+<section class="share-pact">
+  <h2>Share your pact</h2>
+  <div>
+    <button onClick="window.print()" class="btn btn-primary-dark">View print-ready poster</button>
+  </div>
+
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
+  <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
+</section>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
