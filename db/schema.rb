@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171205144417) do
+ActiveRecord::Schema.define(version: 20171205161535) do
 
   create_table "pact_members", force: :cascade do |t|
     t.string "name", null: false
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20171205144417) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "creator", default: false
+    t.integer "referrer_id"
   end
 
   create_table "pacts", force: :cascade do |t|

@@ -8,7 +8,6 @@
 
 <%= form_for @pact_form, as: :pact, url: pacts_path do |f|%>
   <%= f.hidden_field :name %>
-  <%= f.hidden_field :email %>
   <%= f.hidden_field :action %>
   <%= f.hidden_field :people_requirement %>
   <%= f.label :email, 'Your email' %>
