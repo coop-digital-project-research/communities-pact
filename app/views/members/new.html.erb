@@ -1,0 +1,14 @@
+<h1>Join <%= @original_pact_member.name %>'s pact </h1>
+
+<blockquote>
+  I, <span contenteditable="true" placeholder="[your first name]" data-update="#pact_name"></span>,
+  will <%= @original_pact.action %>
+  and I need <%= pluralize(@original_pact.people_requirement, 'person')%> to join me.
+</blockquote>
+
+<%= form_for @join_form, as: :pact, url: members_path(pact_id: @original_pact_member.public_slug) do |f|%>
+  <%= f.hidden_field :name %>
+  <%= f.label :email, 'Your email' %>
+  <%= f.email_field :email %>
+  <%= f.submit "Join #{@original_pact_member.name}'s pact", class: 'btn btn-primary'%>
+<% end %>

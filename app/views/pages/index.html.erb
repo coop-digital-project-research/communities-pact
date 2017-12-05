@@ -5,9 +5,14 @@
 <ul>
   <%- @pact_members.each do |pact_member| %>
     <li>
-      <%= pact_member.name %> has <%= pact_member.creator? ? 'created' : 'joined' %> a pact
+      <% if pact_member.creator? %>
+        <%= pact_member.name %> has created a pact
+      <% else %>
+        <%= pact_member.name %> has joined <%= pact_member.referrer.name %>'s pact
+      <% end %>
       <%= link_to '[View pact page]', pact_path(pact_member.public_slug)%>
       <%= link_to '[View post-creation page]', member_path(pact_member.member_slug)%>
+      <%= link_to '[Join]', new_member_path(pact_id: pact_member.public_slug)%>
     </li>
   <% end %>
 </ul>
