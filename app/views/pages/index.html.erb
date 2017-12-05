@@ -1,11 +1,5 @@
 <h1>Pacts</h1>
 
-<ol>
-  <% @pacts.each do |pact| %>
-    <li><%= "I, #{pact.name}, will #{pact.action}, and I need #{pact.people_requirement} to join me." %></li>
-  <% end %>
-</ol>
-
 <ul>
   <%- @pact_members.each do |pact_member| %>
     <li>
