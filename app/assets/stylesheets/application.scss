@@ -32,6 +32,11 @@ h1 {
       display: block;
     }
   }
+  blockquote {
+    &.pact-statement {
+      font-size: 2.8rem;
+    }
+  }
   section.share-pact {
     display: none;
   }
