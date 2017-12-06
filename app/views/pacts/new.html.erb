@@ -11,6 +11,6 @@
   <%= f.hidden_field :action %>
   <%= f.hidden_field :people_requirement %>
   <%= f.label :email, 'Your email' %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email, required: true %>
   <%= f.submit "Create a pact", class: 'btn btn-primary'%>
 <% end %>
