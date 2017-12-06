@@ -20,6 +20,12 @@ class PactsController < ApplicationController
   def show
     @pact_member = PactMember.find_by!(public_slug: params[:id])
     @pact = @pact_member.pact
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'show'
+      end
+    end
   end
 
 end
