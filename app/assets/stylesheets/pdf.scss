@@ -73,7 +73,7 @@ body#a4-poster {
     width: 100%;
     div.cta {
       float: left;
-      font-size: 24pt;
+      font-size: 36pt;
       width: 100%;
       margin-bottom: 1cm;
       span {
@@ -82,10 +82,17 @@ body#a4-poster {
           font-weight: bold;
           margin: 0;
           padding: 0;
-          display: block;
         }
         &.cta-url {
-          font-size: 18pt;
+          margin: 0;
+          padding: 0;
+          font-size: 24pt;
+          font-family: monospace;
+          background: $added-to-page;
+          a {
+            margin: 0;
+            padding: 0;
+          }
         }
       }
     }
