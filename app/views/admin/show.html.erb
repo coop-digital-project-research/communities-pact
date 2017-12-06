@@ -12,6 +12,8 @@
       <th></th>
       <th></th>
       <th></th>
+      <th>Views</th>
+      <th>Prints</th>
     </tr>
   </thead>
   <tbody>
@@ -40,6 +42,8 @@
         <td>
           <%= link_to 'Join', new_member_path(pact_id: pact_member.public_slug)%>
         </td>
+        <td><%= pact_member.view_count %></td>
+        <td><%= pact_member.print_count %></td>
       </tr>
     <% end %>
   </tbody>
