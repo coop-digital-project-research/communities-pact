@@ -16,7 +16,7 @@ class MembersController < ApplicationController
     @original_pact = @original_pact_member.pact
     @join_form = JoinForm.new(params.require(:pact).permit(:name, :email))
     if @join_form.valid?
-      pact_member = PactCreator.join!(@original_pact_member, @join_form)
+      pact_member = PactCreator.join!(@original_pact_member, @join_form, source: request_source)
       redirect_to member_path(pact_member.member_slug)
     else
       render :new

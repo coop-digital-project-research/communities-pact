@@ -1,18 +1,5 @@
 <h1>Pacts</h1>
 
-<%= link_to 'Create a new pact', new_pact_path %>
+Homepage content here
 
-<ul>
-  <%- @pact_members.each do |pact_member| %>
-    <li>
-      <% if pact_member.creator? %>
-        <%= pact_member.name %> has created a pact
-      <% else %>
-        <%= pact_member.name %> has joined <%= pact_member.referrer.name %>'s pact
-      <% end %>
-      <%= link_to '[View pact page]', pact_path(pact_member.public_slug)%>
-      <%= link_to '[View post-creation page]', member_path(pact_member.member_slug)%>
-      <%= link_to '[Join]', new_member_path(pact_id: pact_member.public_slug)%>
-    </li>
-  <% end %>
-</ul>
+<%= link_to 'Create a new pact', new_pact_path, class: 'btn btn-primary'%>

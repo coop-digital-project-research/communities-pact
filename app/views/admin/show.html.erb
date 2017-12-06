@@ -1,0 +1,46 @@
+<h1>Pacts</h1>
+
+<%= link_to 'Create a new pact', new_pact_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Who</th>
+      <th>Did</th>
+      <th>When</th>
+      <th>From</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%- @pact_members.each do |pact_member| %>
+      <tr>
+        <td><%= pact_member.name %></td>
+        <td>
+          <% if pact_member.creator? %>
+            created a pact
+          <% else %>
+            has joined <%= pact_member.referrer.name %>'s pact
+          <% end %>
+        </td>
+        <td>
+          <%= pact_member.created_at.strftime('%d-%m-%Y') %>
+        </td>
+        <td>
+          <%= pact_member.source %>
+        </td>
+        <td>
+          <%= link_to 'Pact page', pact_path(pact_member.public_slug)%>
+        </td>
+        <td>
+          <%= link_to 'Post-creation page', member_path(pact_member.member_slug)%>
+        </td>
+        <td>
+          <%= link_to 'Join', new_member_path(pact_id: pact_member.public_slug)%>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

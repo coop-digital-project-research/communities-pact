@@ -10,7 +10,7 @@ class PactsController < ApplicationController
     @pact_form = NewPactForm.new(params.require(:pact).permit(:name, :email, :action, :people_requirement))
 
     if @pact_form.valid?
-      pact_member = PactCreator.create!(@pact_form)
+      pact_member = PactCreator.create!(@pact_form, source: request_source)
       redirect_to member_path(pact_member.member_slug)
     else
       render :new
