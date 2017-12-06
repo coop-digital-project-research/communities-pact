@@ -5,7 +5,7 @@
   will <%= @original_pact.action %>
   with <%= @original_pact.member_names %>
   <% if @original_pact.member_difference > 1 %>
-    and we need <%= pluralize(@original_pact.member_difference - 1, 'people')%> to join us.
+    and we need at least <%= pluralize(@original_pact.member_difference - 1, 'more person')%> to join us.
   <% end %>
 </blockquote>
 
