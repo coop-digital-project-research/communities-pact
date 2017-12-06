@@ -7,12 +7,13 @@
 <% end %>
 <%= render 'shared/pact', pact_member: @pact_member, pact: @pact %>
 
-<h3><%= @short_url %></h3>
 
 <section class="share-pact">
+
   <h2>Share your pact</h2>
+  <h3><%= link_to @short_url, @short_url %></h3>
   <div>
-    <button onClick="window.print()" class="btn btn-primary">View print-ready poster</button>
+    <%= link_to 'View print-ready poster', url_for(format: :pdf), target: :_blank, class: 'btn btn-primary' %>
   </div>
 
   <!-- Load Facebook SDK for JavaScript -->
