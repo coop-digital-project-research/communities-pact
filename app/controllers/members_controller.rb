@@ -7,7 +7,8 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'show'
+        render pdf: 'show',
+        page_size: 'A4'
       end
     end
   end
