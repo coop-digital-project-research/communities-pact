@@ -1,3 +1,9 @@
+<%- content_for :head do %>
+  <meta property="og:title"         content="Join <%= @pact_member.name %> in their pact" />
+  <meta property="og:description"   content="<%= pact_text(@pact_member, @pact) %>" />
+  <meta property="og:image"         content="<%= asset_url('logos/coop.png')%>" />
+<% end %>
+
 <h1> Join <%= @pact_member.name %> in their pact</h1>
 
 <%= render 'shared/pact', pact_member: @pact_member, pact: @pact %>
