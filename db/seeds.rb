@@ -14,4 +14,4 @@ ians_pact = NewPactForm.new(
   action: 'sweep the pavement of Station Road',
   people_requirement: 10
 )
-PactCreator.create!(ians_pact)
+PactCreator.create!(ians_pact, source: 'test_data')
