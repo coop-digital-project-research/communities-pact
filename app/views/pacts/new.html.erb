@@ -1,9 +1,9 @@
 <h1>Create a pact </h1>
 
 <blockquote>
-  I, <span contenteditable="true" placeholder="[your first name]" data-update="#pact_name"></span>,
-  will <span contenteditable="true" placeholder="[what are you going to do?]" data-update="#pact_action"></span>
-  and I need at least <span contenteditable="true" placeholder="[how many?]" data-update="#pact_people_requirement"></span> more people to join me.
+  I, <span contenteditable="true" class="text" placeholder="[your first name]" data-update="#pact_name"></span>,
+  will <span contenteditable="true" class="text" placeholder="[what are you going to do?]" data-update="#pact_action"></span>
+  and I need at least <span contenteditable="true" class="numeric" placeholder="[how many?]" data-update="#pact_people_requirement"></span> more people to join me.
 </blockquote>
 
 <%= form_for @pact_form, as: :pact, url: pacts_path do |f|%>
