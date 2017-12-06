@@ -18,20 +18,26 @@
 button, a.btn {
   margin-bottom: 1rem;
 }
-
+[contenteditable] {
+}
 [contenteditable=true] {
   padding: 4px;
   margin: 2px;
-  background-color: #66CDAA;
+  background-color: $offwhite;
+  font-family: "AvenirNextLTW01-Medium";
 }
 
 [contenteditable=true]:empty {
-  background-color: #CCC;
-  color: white;
+  background-color: $added-to-page;
 }
 
 [contenteditable=true]:empty:before {
   content: attr(placeholder);
+}
+
+input[type="submit"] {
+  width: auto;
+  margin: 1rem 0;
 }
 
 blockquote {
