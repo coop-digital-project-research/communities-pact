@@ -30,7 +30,11 @@ $(document).ready(function(){
   });
 
   $('.numeric[contenteditable=true]').keypress(function(event){
-    return (event.keyCode >= 48 && event.keyCode <= 57);
+    var code = event.which || event.charCode || event.keyCode || 0;
+    console.log(event.which);
+    console.log(event.charCode);
+    console.log(event.keyCode);
+    return (code >= 48 && code <= 57);
   });
   $('.text[contenteditable=true]').keypress(function(event){
     return !(event.keyCode == 13);
