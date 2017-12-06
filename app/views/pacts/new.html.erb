@@ -1,9 +1,15 @@
 <h1>Create a pact </h1>
 
+<% if @pact_form.errors.any? %>
+  <div class="form-error">
+    Please fill in all the sections of the pact
+  </div>
+<% end %>
+
 <blockquote>
-  I, <span contenteditable="true" placeholder="[your first name]" data-update="#pact_name"></span>,
-  will <span contenteditable="true" placeholder="[what are you going to do?]" data-update="#pact_action"></span>
-  and I need at least <span contenteditable="true" placeholder="[how many?]" data-update="#pact_people_requirement"></span> more people to join me.
+  I, <span contenteditable="true" class="text" placeholder="[your first name]" data-update="#pact_name"><%=@pact_form.name%></span>,
+  will <span contenteditable="true" class="text" placeholder="[what are you going to do?]" data-update="#pact_action"><%=@pact_form.action%></span>
+  and I need at least <span contenteditable="true" class="numeric" placeholder="[how many?]" data-update="#pact_people_requirement"><%=@pact_form.people_requirement%></span> more people to join me.
 </blockquote>
 
 <%= form_for @pact_form, as: :pact, url: pacts_path do |f|%>
@@ -11,6 +17,6 @@
   <%= f.hidden_field :action %>
   <%= f.hidden_field :people_requirement %>
   <%= f.label :email, 'Your email' %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email, required: true %>
   <%= f.submit "Create a pact", class: 'btn btn-primary'%>
 <% end %>

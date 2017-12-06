@@ -22,4 +22,17 @@ $(document).ready(function(){
       $(element.data('update')).val(element.html());
     }
   });
+  $('[contenteditable=true]').keyup(function(){
+    var element = $(this);
+    if(element.data('update').length > 1){
+      $(element.data('update')).val(element.text());
+    }
+  });
+
+  $('.numeric[contenteditable=true]').keypress(function(event){
+    return (event.keyCode >= 48 && event.keyCode <= 57);
+  });
+  $('.text[contenteditable=true]').keypress(function(event){
+    return !(event.keyCode == 13);
+  });
 });

@@ -1,9 +1,9 @@
-<h1>Join <%= @original_pact_member.name %>'s pact </h1>
+<h1>Join <%= strip_tags(@original_pact_member.name)%>'s pact </h1>
 
 <blockquote class="pact-statement">
-  I, <span contenteditable="true" placeholder="[your first name]" data-update="#pact_name"></span>,
-  will <%= @original_pact.action %>
-  with <%= @original_pact.member_names %>
+  I, <span contenteditable="true" class="text" placeholder="[your first name]" data-update="#pact_name"></span>,
+  will <%= strip_tags(@original_pact.action)%>
+  with <%= strip_tags(@original_pact.member_names)%>
   <% if @original_pact.member_difference > 1 %>
     and we need at least <%= pluralize(@original_pact.member_difference - 1, 'more person')%> to join us.
   <% end %>
@@ -13,5 +13,5 @@
   <%= f.hidden_field :name %>
   <%= f.label :email, 'Your email' %>
   <%= f.email_field :email %>
-  <%= f.submit "Join #{@original_pact_member.name}'s pact", class: 'btn btn-primary'%>
+  <%= f.submit "Join #{strip_tags(@original_pact_member.name)}'s pact", class: 'btn btn-primary'%>
 <% end %>
