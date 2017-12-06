@@ -1,4 +1,4 @@
-<h1> Join <%= @pact_member.name %> in their pact</h1>
+<h1> Join <%= strip_tags(@pact_member.name)%> in their pact</h1>
 
 <%= render 'shared/pact', pact_member: @pact_member, pact: @pact %>
 

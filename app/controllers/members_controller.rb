@@ -3,6 +3,13 @@ class MembersController < ApplicationController
   def show
     @pact_member = PactMember.find_by!(member_slug: params[:id])
     @pact = @pact_member.pact
+    @short_url = helpers.shorten_url(pact_url(@pact_member.public_slug))
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: 'show'
+      end
+    end
   end
 
   def new

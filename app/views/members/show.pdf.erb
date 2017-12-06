@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8' />
+    <%= stylesheet_link_tag wicked_pdf_asset_base64("pdf") -%>
+  </head>
+  <body id="a4-poster">
+
+    <div class="pact-speech-bubble">
+      <p>
+        <%=pact_text(@pact_member, @pact)%>
+      </p>
+    </div>
+
+    <footer>
+      <div class="cta">
+        <span class="cta-text">
+          Join me! Visit:
+        </span>
+        <span class="cta-url">
+          <%=@short_url%>
+        </span>
+      </div>
+      <div class="coop-logo">
+        <%= wicked_pdf_image_tag 'logos/coop.png' %>
+      </div>
+    </footer>
+
+  </body>
+</html>
