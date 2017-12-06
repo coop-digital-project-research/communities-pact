@@ -1,3 +1,5 @@
 <h1> Join <%= @pact_member.name %> in their pact</h1>
 
 <%= render 'shared/pact', pact_member: @pact_member, pact: @pact %>
+
+<a class="btn btn-primary" href="<%= new_member_path(pact_id: @pact_member.public_slug)%>">Join this pact</a>
