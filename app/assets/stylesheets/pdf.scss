@@ -36,7 +36,60 @@
 @import "coop-toolkit/helpers";
 
 body#a4-poster {
-  h1 {
+  position: relative;
+  height: 27cm;
+  div.pact-speech-bubble {
+    border-radius: 0.2rem;
+    background-color: #117e80;
+    position: relative;
+    z-index: 0;
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: -1cm;
+      left: 2cm;
+      width: 4cm;
+      height: 4cm;
+      background-color: #117e80;
+      -webkit-transform: rotate(-25deg);
+      z-index: -1;
+    }
 
+    p {
+      z-index: 4;
+      width: 100%;
+      padding: 2cm;
+      color: $white;
+      font-size: 36pt;
+      font-weight: bold;
+      line-height: 1.2;
+    }
+  }
+  footer {
+    padding: 2cm 0 0 2cm;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    div.cta {
+      float: left;
+      font-size: 24pt;
+      width: 100%;
+      margin-bottom: 1cm;
+      span {
+        &.cta-text {
+          width: 100%;
+          font-weight: bold;
+          margin: 0;
+          padding: 0;
+          display: block;
+        }
+        &.cta-url {
+          font-size: 18pt;
+        }
+      }
+    }
+    div.coop-logo {
+      float: right;
+    }
   }
 }

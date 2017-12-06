@@ -5,14 +5,26 @@
     <%= stylesheet_link_tag wicked_pdf_asset_base64("pdf") -%>
   </head>
   <body id="a4-poster">
-    <a class="coop-logo" aria-label="Homepage" href="/">
-      <%= wicked_pdf_image_tag 'logos/coop.png' %>
-    </a>
 
-    <h1>Hello</h1>
-    <p>
-      This is good
-    </p>
+    <div class="pact-speech-bubble">
+      <p>
+        <%=pact_text(@pact_member, @pact)%>
+      </p>
+    </div>
+
+    <footer>
+      <div class="cta">
+        <span class="cta-text">
+          Join me! Visit:
+        </span>
+        <span class="cta-url">
+          <%=pact_url(@pact_member.public_slug)%>
+        </span>
+      </div>
+      <div class="coop-logo">
+        <%= wicked_pdf_image_tag 'logos/coop.png' %>
+      </div>
+    </footer>
 
   </body>
 </html>
