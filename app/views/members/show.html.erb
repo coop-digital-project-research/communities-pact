@@ -25,7 +25,7 @@
 
   <div class="share-buttons">
     <!-- Your share button code -->
-    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
+    <div class="fb-share-button" data-href="<%=pact_url(@pact_member.public_slug)%>" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Share</a></div>
 
     <a href="https://twitter.com/share?ref_src=twsrc%5Etfw&text=<%=pact_text(@pact_member, @pact)%>&url=<%=pact_url(@pact_member.public_slug)%>" class="twitter-share-button" data-show-count="false" data-size="large">Tweet</a>
   </div>
