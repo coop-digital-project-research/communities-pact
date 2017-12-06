@@ -4,12 +4,15 @@
     <meta charset='utf-8' />
     <%= stylesheet_link_tag wicked_pdf_asset_base64("pdf") -%>
   </head>
-  <body>
+  <body id="a4-poster">
     <a class="coop-logo" aria-label="Homepage" href="/">
       <%= wicked_pdf_image_tag 'logos/coop.png' %>
     </a>
 
-    <%=pact_text(@pact_member, @pact)%>
+    <h1>Hello</h1>
+    <p>
+      This is good
+    </p>
 
   </body>
 </html>
