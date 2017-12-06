@@ -25,7 +25,7 @@ $(document).ready(function(){
   $('[contenteditable=true]').keyup(function(){
     var element = $(this);
     if(element.data('update').length > 1){
-      $(element.data('update')).val(element.html());
+      $(element.data('update')).val(element.text());
     }
   });
 
