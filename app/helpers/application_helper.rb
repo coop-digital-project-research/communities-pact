@@ -1,3 +1,5 @@
+require 'bitly'
+
 module ApplicationHelper
   def pact_text(pact_member, pact)
     pact_text = "I, #{strip_tags(pact_member.name)}, will #{strip_tags(pact.action)}"
@@ -11,5 +13,15 @@ module ApplicationHelper
       pact_text << " with #{strip_tags(pact.member_names(without: pact_member))}."
     end
     pact_text
+  end
+
+  def shorten_url(url)
+    if ENV['BITLY_API_KEY']
+      Bitly.client.shorten(url).short_url
+    else
+      url
+    end
+  rescue
+    url
   end
 end
