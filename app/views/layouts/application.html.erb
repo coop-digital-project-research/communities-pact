@@ -10,6 +10,11 @@
     <%#<%= favicon_tag 'images/favicon.ico' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta property="og:url"           content="<%=url_for(only_path: false)%>" />
+    <meta property="og:type"          content="website" />
+
+    <%= yield :head %>
   </head>
   <body>
     <div class="app-content">
