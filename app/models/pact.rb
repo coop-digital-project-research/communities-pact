@@ -7,7 +7,7 @@ class Pact < ApplicationRecord
   end
 
   def member_difference
-    people_requirement - member_count
+    (people_requirement + 1) - member_count # people requirement does not include the creator
   end
 
   def member_names(without: [])
