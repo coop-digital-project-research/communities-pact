@@ -7,8 +7,8 @@ class MembersController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: 'show',
-        page_size: 'A4'
+        PactMember.increment_counter(:print_count, @pact_member.id)
+        render pdf: 'show', page_size: 'A4'
       end
     end
   end

@@ -20,6 +20,7 @@ class PactsController < ApplicationController
   def show
     @pact_member = PactMember.find_by!(public_slug: params[:id])
     @pact = @pact_member.pact
+    PactMember.increment_counter(:view_count, @pact_member.id)
   end
 
 end
