@@ -1,9 +1,12 @@
 <h1>Join <%= @original_pact_member.name %>'s pact </h1>
 
-<blockquote>
+<blockquote class="pact-statement">
   I, <span contenteditable="true" placeholder="[your first name]" data-update="#pact_name"></span>,
   will <%= @original_pact.action %>
-  and I need <%= pluralize(@original_pact.people_requirement, 'person')%> to join me.
+  with <%= @original_pact.member_names %>
+  <% if @original_pact.member_difference > 1 %>
+    and we need <%= pluralize(@original_pact.member_difference - 1, 'people')%> to join us.
+  <% end %>
 </blockquote>
 
 <%= form_for @join_form, as: :pact, url: members_path(pact_id: @original_pact_member.public_slug) do |f|%>

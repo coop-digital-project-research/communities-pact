@@ -14,6 +14,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem 'wicked_pdf'
+
 gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
@@ -25,6 +27,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'sqlite3'
   gem 'rspec-rails', '~> 3.6'
+  gem 'wkhtmltopdf-binary'
 end
 
 group :development do
@@ -36,6 +39,7 @@ end
 
 group :production do
   gem 'pg'
+  gem 'wkhtmltopdf-heroku'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
